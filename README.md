@@ -154,4 +154,11 @@ To improve performance and realism, the following upgrades can be applied:
 - Domain-specific text cleaning  
 
 ---
+## Conclusion
+
+This project demonstrates how classical NLP techniques like **TF-IDF** combined with **Naive Bayes** can deliver strong baseline performance for sentiment analysis tasks on movie review data.
+
+While the model performs well and generalizes effectively, it is inherently limited by its lack of semantic and contextual understanding. Nonetheless, it provides a solid, interpretable foundation and a reliable benchmark before transitioning to more advanced models.
+
+
 

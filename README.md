@@ -1,68 +1,73 @@
-#  Sentiment Analysis using Naive Bayes & TF-IDF
+# Sentiment Analysis using Naive Bayes, Logistic Regression & TF-IDF
 
-This project implements a **text sentiment classification system** using classical Natural Language Processing (NLP) techniques.  
-The goal is to classify text reviews as **positive** or **negative** using a **TF-IDF vectorizer** and a **Multinomial Naive Bayes** classifier.
+This project implements a text sentiment classification system using classical Natural Language Processing (NLP) techniques.
+The goal is to classify text reviews as positive or negative using a TF-IDF vectorizer with Multinomial Naive Bayes and Logistic Regression classifiers.
 
----
-
-##  Project Overview
+## Project Overview
 
 Sentiment analysis is a common NLP task used in applications such as:
 
-- Product review analysis  
-- Social media monitoring  
-- Customer feedback systems  
+* Product review analysis
+* Social media monitoring
+* Customer feedback systems
 
-This project demonstrates how **traditional machine learning techniques** can be effectively used to build a sentiment classifier **without deep learning**, while still following a clean and standard ML workflow.
+This project demonstrates how traditional machine learning models can be effectively applied to sentiment analysis without deep learning, while following a clean, industry-standard ML workflow and comparing multiple classifiers.
+
+## Dataset Overview
+
+**Source:** IMDB Dataset of 50K Movie Reviews (Kaggle)
+[https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
+
+* **Total samples:** 50,000 movie reviews
+* **Positive reviews:** 25,000
+* **Negative reviews:** 25,000
+* Balanced binary sentiment classification dataset
 
 ---
 
-##  Dataset Overview
 
-- **Source:** IMDB Dataset of 50K Movie Reviews (Kaggle)  
-  https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
-- **Total samples:** 50,000 movie reviews  
-- **Positive reviews:** 25,000  
-- **Negative reviews:** 25,000  
-- Balanced binary sentiment classification dataset
-
----
-
-##  Model Pipeline
+# Model Pipeline
 
 The workflow follows standard machine learning best practices:
 
-### 1. Text Preprocessing
-- Lowercasing
-- Stopword removal
-- Tokenization (handled internally by TF-IDF)
+## 1. Text Preprocessing
 
-### 2. Feature Extraction
-- TF-IDF Vectorization
-- Unigrams + Bigrams (`ngram_range=(1,2)`)
+* Lowercasing
+* Stopword handling
+* Tokenization (handled internally by TF-IDF)
 
-### 3. Model Training
-- Multinomial Naive Bayes
+## 2. Feature Engineering
 
-### 4. Evaluation
-- Accuracy
-- Precision, Recall, F1-score
-- Confusion Matrix
+* TF-IDF Vectorization
+* Unigrams + Bigrams (`ngram_range=(1,2)`)
 
-### 5. Prediction
-- Sentiment prediction on unseen text
+## 3. Model Training
 
----
+* Multinomial Naive Bayes
+* Logistic Regression
+
+## 4. Evaluation
+
+* Accuracy
+* Precision, Recall, F1-score
+* Confusion Matrix
+
+## 5. Prediction
+
+* Sentiment prediction on unseen text
+* Model comparison on the same input samples
 
 ## Technologies Used
 
-- Python  
-- Scikit-learn  
-- NumPy  
-- Jupyter Notebook  
+* Python
+* Scikit-learn
+* NumPy
+* Jupyter Notebook
+
 
 ---
-=
+
+
 
 ## ⚙️ Model Configuration
 
@@ -84,81 +89,47 @@ The workflow follows standard machine learning best practices:
   - Removes common non-informative words
   - Improves signal-to-noise ratio in features
 
-- **Overall Impact**
-  - Provides a strong, efficient feature representation
-  - Well-suited for classical ML models like Naive Bayes
-
 
 ---
 
-## 📈 Model Evaluation
-
-![Model Evaluation](screenshots/Evaluation.png)
 
 
+# Key Learnings
 
-- **Training Accuracy:** 86.53%  
-- **Testing Accuracy:** 85.03%  
-  → Indicates good generalization with minimal overfitting.
+* Classical machine learning models rely heavily on feature engineering
+* TF-IDF captures word importance rather than semantic meaning
+* Naive Bayes is fast and interpretable but assumes word independence
+* Logistic Regression provides stronger decision boundaries for sentiment classification tasks
+* Comparing multiple models on the same feature set improves confidence in r
 
-- **Class-wise Performance:**
-  - Negative sentiment: Precision 0.86, Recall 0.84, F1-score 0.85
-  - Positive sentiment: Precision 0.84, Recall 0.86, F1-score 0.85
-  → Balanced performance across both classes.
-
-- **Overall Metrics:**
-  - Macro Avg F1-score: 0.85
-  - Weighted Avg F1-score: 0.85
-  → Confirms consistent performance despite class distribution.
-
-- **Confusion Matrix Analysis:**
-  - Correct predictions dominate both classes.
-  - Misclassifications are symmetric, showing no strong class bias.
-
-- **Key Takeaway:**
-  - The model provides a strong baseline for sentiment analysis using TF-IDF + Naive Bayes, with stable and interpretable results.
-
-
----
-
-##  Key Learnings
-
-- Classical ML models depend heavily on **feature representation**
-- TF-IDF captures **frequency**, not semantic meaning
-- Naive Bayes performs well but has **limited contextual understanding**
-- Evaluation metrics must always be interpreted with **model limitations** in mind
 
 ---
 
 ##  Future Improvements
 
-To improve performance and realism, the following upgrades can be applied:
 
-### 1. Advanced Models
-- Logistic Regression  
-- Linear SVM  
-- XGBoost  
+### Use semantic word embeddings
+- Replace TF-IDF with **Word2Vec, GloVe, or FastText** to capture semantic similarity between words.
+- Generate sentence-level representations using averaged or weighted embeddings.
 
-### 2. Better Text Representations
-- Word2Vec  
-- GloVe  
-- FastText  
+### Adopt transformer-based models
+- Experiment with **DistilBERT or BERT** to leverage contextual understanding of language.
+- Fine-tune models on domain-specific sentiment data for improved performance.
 
-### 3. Deep Learning Approaches
-- LSTM / GRU  
-- Transformer-based models (BERT, RoBERTa, DistilBERT)
+### Expand the dataset
+- Increase training data size to improve model generalization and reduce prediction variance.
 
-### 4. Dataset Enhancements
-- Larger datasets  
-- Improved class balance  
-- Domain-specific text cleaning  
+### Improve evaluation strategy
+- Apply **k-fold cross-validation** to obtain more robust and reliable performance estimates across different data splits.
+
 
 ---
-## Conclusion
 
-This project demonstrates how classical NLP techniques like **TF-IDF** combined with **Naive Bayes** can deliver strong baseline performance for sentiment analysis tasks on movie review data.
 
-While the model performs well and generalizes effectively, it is inherently limited by its lack of semantic and contextual understanding. Nonetheless, it provides a solid, interpretable foundation and a reliable benchmark before transitioning to more advanced models.
+# Conclusion
 
+This project demonstrates that TF-IDF combined with classical machine learning models such as Naive Bayes and Logistic Regression can deliver strong baseline performance for sentiment analysis on movie review data.
+
+While these models lack deep semantic understanding, they are fast, interpretable, and effective. Logistic Regression consistently demonstrates improved robustness over Naive Bayes, making it a strong next-step baseline before transitioning to deep learning–based solu
 
 

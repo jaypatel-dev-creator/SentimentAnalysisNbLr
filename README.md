@@ -1,9 +1,8 @@
 # Sentiment Analysis using Naive Bayes, Logistic Regression & TF-IDF
 
 This project implements a text sentiment classification system using classical Natural Language Processing (NLP) techniques.
-The goal is to classify text reviews as positive or negative using a TF-IDF vectorizer with Multinomial Naive Bayes and Logistic Regression classifiers.
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)]
-(https://colab.research.google.com/github/jaypatel-dev-creator/SentimentAnalysisNbLr/blob/main/SentimentAnalysis.ipynb#scrollTo=aIu9WSzhcRJL)
+
+
 
 
 ## Project Overview
@@ -27,8 +26,10 @@ This project demonstrates how traditional machine learning models can be effecti
 * Balanced binary sentiment classification dataset
 
 ---
+Run notebook on colab
+(https://colab.research.google.com/github/jaypatel-dev-creator/SentimentAnalysisNbLr/blob/main/SentimentAnalysis.ipynb#scrollTo=aIu9WSzhcRJL)
 
-
+---
 # Model Pipeline
 
 The workflow follows standard machine learning best practices:

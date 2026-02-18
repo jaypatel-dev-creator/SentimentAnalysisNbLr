@@ -3,7 +3,7 @@
 This project implements a text sentiment classification system using classical Natural Language Processing (NLP) techniques.
 The goal is to classify text reviews as positive or negative using a TF-IDF vectorizer with Multinomial Naive Bayes and Logistic Regression classifiers.
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)]
-(https://github.com/jaypatel-dev-creator/SentimentAnalysisNbLr/blob/main/SentimentAnalysis.ipynb)
+(https://colab.research.google.com/github/jaypatel-dev-creator/SentimentAnalysisNbLr/blob/main/SentimentAnalysis.ipynb#scrollTo=aIu9WSzhcRJL)
 
 
 ## Project Overview
@@ -72,30 +72,6 @@ The workflow follows standard machine learning best practices:
 
 
 
-## ⚙️ Model Configuration
-
-![Model Configuration](screenshots/model_config.png)
-
-
-
-
-
-- **max_features = 5000**
-  - Limits vocabulary size to the most informative terms
-  - Reduces noise and helps prevent overfitting
-
-- **ngram_range = (1, 2)**
-  - Uses unigrams and bigrams
-  - Captures short contextual phrases like *“not good”* and *“very bad”*
-
-- **stop_words = 'english'**
-  - Removes common non-informative words
-  - Improves signal-to-noise ratio in features
-
-
----
-
-
 
 # Key Learnings
 
@@ -103,7 +79,7 @@ The workflow follows standard machine learning best practices:
 * TF-IDF captures word importance rather than semantic meaning
 * Naive Bayes is fast and interpretable but assumes word independence
 * Logistic Regression provides stronger decision boundaries for sentiment classification tasks
-* Comparing multiple models on the same feature set improves confidence in r
+
 
 
 ---

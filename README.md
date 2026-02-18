@@ -2,6 +2,9 @@
 
 This project implements a text sentiment classification system using classical Natural Language Processing (NLP) techniques.
 The goal is to classify text reviews as positive or negative using a TF-IDF vectorizer with Multinomial Naive Bayes and Logistic Regression classifiers.
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)]
+(https://github.com/jaypatel-dev-creator/SentimentAnalysisNbLr/blob/main/SentimentAnalysis.ipynb)
+
 
 ## Project Overview
 
